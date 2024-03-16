@@ -1,0 +1,21 @@
+.article {
+  border-bottom: 1px solid #dee1e6;
+  
+  .article-image {
+    border-radius: 0.5rem;
+  }
+
+  .article-date,
+  .article-source {
+    font-size: 0.75rem;
+    color: #565d6d;
+    font-weight: 400;
+    line-height: 1.25rem;
+  }
+
+  .article-title {
+    font-family: "Inter-Bold";
+    color: #171a1f;
+    line-height: 1.625rem;
+  }
+}

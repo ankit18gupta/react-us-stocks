@@ -1,10 +1,15 @@
-import React from "react";
+import { ArticleListProps } from "../../models/types";
+import Article from "./Article";
+import "./ArticleList.scss";
 
-const ArticleList = () => {
+const ArticleList = ({ articles }: ArticleListProps) => {
   return (
-    <div className="article-list">
-      <p>Hello World</p>
-    </div>
+    <>
+      {articles?.length! > 0 &&
+        articles?.map((article) => (
+          <Article {...article} key={article.title} />
+        ))}
+    </>
   );
 };
 

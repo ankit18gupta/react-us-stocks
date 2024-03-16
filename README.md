@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# Getting Started with React US Stocks App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Node JS should be installed on the machine before running any of the below commands.
 
 ## Available Scripts
 
