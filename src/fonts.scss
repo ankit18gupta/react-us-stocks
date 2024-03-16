@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "Inter-Regular"; /* Font family name for Regular */
+  src: url("./fonts/Inter-Regular.ttf") format("truetype"); /* Path to Regular TTF font file */
+}
+
+@font-face {
+  font-family: "Inter-SemiBold"; /* Font family name for SemiBold */
+  src: url("./fonts/Inter-SemiBold.ttf") format("truetype"); /* Path to SemiBold TTF font file */
+}
+
+/* Add more @font-face rules for other font weights/styles if needed */
