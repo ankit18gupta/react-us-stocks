@@ -1,0 +1,25 @@
+@import "./fonts.scss";
+
+body {
+  font-family: "Inter-Regular", sans-serif;
+  color: #171a1f;
+}
+
+h6 {
+  font-family: "Inter-Bold";
+}
+
+p {
+  margin-bottom: 0.5rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
