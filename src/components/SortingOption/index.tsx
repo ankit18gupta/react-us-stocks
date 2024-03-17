@@ -10,10 +10,10 @@ const SortingOption = ({ onSortingOptionChange }: SortingOptionProps) => (
         onChange={(e) => onSortingOptionChange(e.target.value)}
       >
         <option value="latestToEarliest" className="sorting-option">
-          Date Descending
+          Date Latest
         </option>
         <option value="earliestToLatest" className="sorting-option">
-          Date Ascending
+          Date Earliest
         </option>
         <option value="titleDescending" className="sorting-option">
           Title Descending

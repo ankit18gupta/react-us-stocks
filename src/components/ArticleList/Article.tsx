@@ -3,10 +3,10 @@ import { appConstants } from "../../utils/constants";
 
 // Format date string to display in UI
 const formatDate = (dateString: string) => {
-  const date = new Date(dateString);
-  const month = date.toLocaleString("en-US", { month: "long" });
-  const year = date.getFullYear();
-  const formattedDate = `${month} ${date.getDate()}, ${year}`;
+  const dateObject = new Date(dateString);
+  const month = dateObject.toLocaleString("en-US", { month: "long" });
+  const year = dateObject.getFullYear();
+  const formattedDate = `${month} ${dateObject.getDate()}, ${year}`;
   return formattedDate;
 };
 

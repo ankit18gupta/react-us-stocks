@@ -27,3 +27,7 @@ export interface ArticleProps {
 export interface ArticleListProps {
   articles?: ArticleProps[];
 }
+
+export interface PaginationProps extends ArticleListProps {
+  handlePageArticles: (arg: ArticleProps[]) => void;
+}

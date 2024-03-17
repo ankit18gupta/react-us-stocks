@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { ArticleProps } from "../../models/types";
 import { appConstants } from "../../utils/constants";
+import Loader from "../../components/Loader";
 import FilterList from "../../components/FilterList";
 import SortingOption from "../../components/SortingOption";
 import ArticleList from "../../components/ArticleList";
-import Loader from "../../components/Loader";
+import Pagination from "../../components/Pagination";
 import "./Home.scss";
 
 const Home = () => {
@@ -83,18 +84,14 @@ const Home = () => {
 
     switch (sortingOption) {
       case "latestToEarliest":
-        sorted.sort((a, b) => {
-          const dateA = a.date ? new Date(a.date) : null;
-          const dateB = b.date ? new Date(b.date) : null;
-          return dateA && dateB ? dateB.getTime() - dateA.getTime() : 0;
-        });
+        sorted.sort(
+          (a, b) => new Date(b?.date!).getTime() - new Date(a?.date!).getTime()
+        );
         break;
       case "earliestToLatest":
-        sorted.sort((a, b) => {
-          const dateA = a.date ? new Date(a.date) : null;
-          const dateB = b.date ? new Date(b.date) : null;
-          return dateA && dateB ? dateA.getTime() - dateB.getTime() : 0;
-        });
+        sorted.sort(
+          (a, b) => new Date(a?.date!).getTime() - new Date(b?.date!).getTime()
+        );
         break;
       case "titleDescending":
         sorted.sort((a, b) => b?.title!.localeCompare(a.title!));
@@ -128,6 +125,11 @@ const Home = () => {
   const handleSortingOptionChange = (option: string) =>
     setSortingOption(option);
 
+  // Event handler to display articles per page
+  const handlePageArticles = (currentArticles: ArticleProps[]) => {
+    setFilteredArticles(currentArticles);
+  };
+
   return (
     <div className="home-page">
       <section className="container-fluid home-page-container">
@@ -155,7 +157,13 @@ const Home = () => {
                 {filteredArticles.length === 0 ? (
                   <p>{appConstants.NO_RESULTS_FOUND_MESSAGE}</p>
                 ) : (
-                  <ArticleList articles={filteredArticles} />
+                  <>
+                    <ArticleList articles={filteredArticles} />
+                    <Pagination
+                      articles={filteredArticles}
+                      handlePageArticles={handlePageArticles}
+                    />
+                  </>
                 )}
               </div>
             </div>
