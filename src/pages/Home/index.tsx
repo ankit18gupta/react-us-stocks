@@ -57,7 +57,7 @@ const Home = () => {
   // Sort articles whenever the sorting option changes
   useEffect(() => {
     sortArticles();
-  }, [sortingOption]);
+  }, [sortingOption, articles]);
 
   // Filter articles function
   const filterArticles = () => {
@@ -127,7 +127,7 @@ const Home = () => {
 
   // Event handler to display articles per page
   const handlePageArticles = (currentArticles: ArticleProps[]) => {
-    // Pagination functionality is breaking, need to fix
+    // This functionality is breaking, need to fix
     // setFilteredArticles(currentArticles);
   };
 
@@ -154,7 +154,7 @@ const Home = () => {
               </div>
             </div>
             <div className="col-12 col-md-8 col-xl-9">
-              <div className="articles-wrapper">
+              <div className="articles-pagination-wrapper">
                 {filteredArticles.length === 0 ? (
                   <p>{appConstants.NO_RESULTS_FOUND_MESSAGE}</p>
                 ) : (

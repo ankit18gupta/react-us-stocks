@@ -10,7 +10,7 @@ const Pagination = ({ articles, onPageChange }: PaginationProps) => {
   const totalPages = Math.ceil(articles?.length! / articlesPerPage);
 
   // Array to store page numbers
-  const pageNumbers = [];
+  const pageNumbers: number[] = [];
   for (let i = 1; i <= totalPages; i++) {
     pageNumbers.push(i);
   }
@@ -31,46 +31,52 @@ const Pagination = ({ articles, onPageChange }: PaginationProps) => {
   };
 
   return (
-    <nav className="pagination-wrapper row justify-content-end">
-      <ul className="pagination col-12 justify-content-end">
-        <li className={`page-item ${currentPage === 1 ? "disabled" : ""}`}>
-          <a
-            className="page-link"
-            href="#"
-            onClick={(e) => handlePageChange(e, currentPage - 1)}
-          >
-            <span>&lt;</span>
-          </a>
-        </li>
-        {pageNumbers.map((number) => (
-          <li
-            key={number}
-            className={`page-item ${currentPage === number ? "active" : ""}`}
-          >
-            <a
-              className="page-link"
-              href="#"
-              onClick={(e) => handlePageChange(e, number)}
+    <>
+      {pageNumbers.length > 0 && (
+        <nav className="pagination-wrapper row justify-content-end">
+          <ul className="pagination col-12 justify-content-end">
+            <li className={`page-item ${currentPage === 1 ? "disabled" : ""}`}>
+              <a
+                className="page-link"
+                href="#"
+                onClick={(e) => handlePageChange(e, currentPage - 1)}
+              >
+                <span>&lt;</span>
+              </a>
+            </li>
+            {pageNumbers.map((number) => (
+              <li
+                key={number}
+                className={`page-item ${
+                  currentPage === number ? "active" : ""
+                }`}
+              >
+                <a
+                  className="page-link"
+                  href="#"
+                  onClick={(e) => handlePageChange(e, number)}
+                >
+                  {number}
+                </a>
+              </li>
+            ))}
+            <li
+              className={`page-item ${
+                currentPage === totalPages ? "disabled" : ""
+              }`}
             >
-              {number}
-            </a>
-          </li>
-        ))}
-        <li
-          className={`page-item ${
-            currentPage === totalPages ? "disabled" : ""
-          }`}
-        >
-          <a
-            className="page-link"
-            href="#"
-            onClick={(e) => handlePageChange(e, currentPage + 1)}
-          >
-            <span>&gt;</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
+              <a
+                className="page-link"
+                href="#"
+                onClick={(e) => handlePageChange(e, currentPage + 1)}
+              >
+                <span>&gt;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      )}
+    </>
   );
 };
 
