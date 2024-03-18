@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { SortingOptionProps } from "../../models/types";
 
 const SortingOption = ({ onSortingOptionChange }: SortingOptionProps) => (

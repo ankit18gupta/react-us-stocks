@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { PaginationProps } from "../../models/types";
+import { appConstants } from "../../utils/constants";
 import "./Pagination.scss";
 
 const Pagination = ({ articles, onPageChange }: PaginationProps) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const articlesPerPage = 5; // Number of articles to display per page
+  const articlesPerPage = appConstants.ARTICLES_PER_PAGE; // Number of articles to display per page
 
   // Calculate the total number of pages
   const totalPages = Math.ceil(articles?.length! / articlesPerPage);
