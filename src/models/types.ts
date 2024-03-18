@@ -29,5 +29,5 @@ export interface ArticleListProps {
 }
 
 export interface PaginationProps extends ArticleListProps {
-  handlePageArticles: (arg: ArticleProps[]) => void;
+  onPageChange: (arg: ArticleProps[]) => void;
 }

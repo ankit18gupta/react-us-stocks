@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { PaginationProps } from "../../models/types";
+import "./Pagination.scss";
 
-const Pagination = ({ articles, handlePageArticles }: PaginationProps) => {
+const Pagination = ({ articles, onPageChange }: PaginationProps) => {
   const [currentPage, setCurrentPage] = useState(1);
   const articlesPerPage = 5; // Number of articles to display per page
 
@@ -26,7 +27,7 @@ const Pagination = ({ articles, handlePageArticles }: PaginationProps) => {
   const handlePageChange = (e: React.MouseEvent, pageNumber: number) => {
     e.preventDefault();
     setCurrentPage(pageNumber);
-    handlePageArticles(currentArticles!);
+    onPageChange(currentArticles!);
   };
 
   return (

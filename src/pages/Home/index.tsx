@@ -127,7 +127,8 @@ const Home = () => {
 
   // Event handler to display articles per page
   const handlePageArticles = (currentArticles: ArticleProps[]) => {
-    setFilteredArticles(currentArticles);
+    // Pagination functionality is breaking, need to fix
+    // setFilteredArticles(currentArticles);
   };
 
   return (
@@ -161,7 +162,7 @@ const Home = () => {
                     <ArticleList articles={filteredArticles} />
                     <Pagination
                       articles={filteredArticles}
-                      handlePageArticles={handlePageArticles}
+                      onPageChange={handlePageArticles}
                     />
                   </>
                 )}
