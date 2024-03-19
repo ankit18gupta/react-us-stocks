@@ -29,7 +29,7 @@ const Pagination = ({ articles, onPageChange }: PaginationProps) => {
     onPageChange(currentArticles);
   }, [currentArticles]);
 
-  // Function to handle page change
+  // Event handler for page change
   const handlePageChange = (e: React.MouseEvent, pageNumber: number) => {
     e.preventDefault();
     setCurrentPage(pageNumber);
