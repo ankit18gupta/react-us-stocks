@@ -24,7 +24,7 @@ const Pagination = ({ articles, onPageChange }: PaginationProps) => {
     );
   }, [currentPage, articles]);
 
-  // Lift the state of articles to be diaplyed on page change
+  // Lift up the state of articles to be displayed on page change
   useEffect(() => {
     onPageChange(currentArticles);
   }, [currentArticles]);

@@ -11,15 +11,15 @@
 
       &.disabled {
         .page-link {
-            background-color: transparent;
-            color: #dee1e6;
-            font-size: 0.875rem;
+          background-color: transparent;
+          color: #dee1e6;
+          font-size: 0.875rem;
         }
       }
 
       &:last-child {
         .page-link {
-            margin-right: 0;
+          margin-right: 0;
         }
       }
 
