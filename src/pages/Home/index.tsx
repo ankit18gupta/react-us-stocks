@@ -17,6 +17,9 @@ const Home = () => {
   const [authors, setAuthors] = useState<string[]>([]);
   const [selectedAuthors, setSelectedAuthors] = useState<string[]>([]);
   const [sortingOption, setSortingOption] = useState("latestToEarliest");
+  const [articlesToDisplay, setArticlesToDisplay] = useState<ArticleProps[]>(
+    []
+  );
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -126,10 +129,8 @@ const Home = () => {
     setSortingOption(option);
 
   // Event handler to display articles per page
-  const handlePageArticles = (currentArticles: ArticleProps[]) => {
-    // This functionality is breaking, need to fix
-    // setFilteredArticles(currentArticles);
-  };
+  const handlePageArticles = (currentArticles: ArticleProps[]) =>
+    setArticlesToDisplay(currentArticles);
 
   return (
     <div className="home-page">
@@ -159,7 +160,10 @@ const Home = () => {
                   <p>{appConstants.NO_RESULTS_FOUND_MESSAGE}</p>
                 ) : (
                   <>
-                    <ArticleList articles={filteredArticles} />
+                    <ArticleList
+                      articles={filteredArticles}
+                      articlesToDisplay={articlesToDisplay}
+                    />
                     <Pagination
                       articles={filteredArticles}
                       onPageChange={handlePageArticles}

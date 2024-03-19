@@ -22,12 +22,15 @@ export interface ArticleProps {
   source?: string;
   title?: string;
   url?: string;
+  showArticle?: boolean;
 }
 
 export interface ArticleListProps {
   articles?: ArticleProps[];
+  articlesToDisplay?: ArticleProps[];
 }
 
-export interface PaginationProps extends ArticleListProps {
+export interface PaginationProps {
+  articles?: ArticleProps[];
   onPageChange: (arg: ArticleProps[]) => void;
 }

@@ -4,6 +4,10 @@
     padding-bottom: 1.25rem;
     margin-bottom: 4rem;
 
+    &.hide-article {
+      display: none;
+    }
+
     .article-image {
       border-radius: 0.5rem;
     }

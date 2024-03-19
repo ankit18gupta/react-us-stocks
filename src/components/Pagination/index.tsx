@@ -1,34 +1,38 @@
-import { useState } from "react";
-import { PaginationProps } from "../../models/types";
+import { useEffect, useState } from "react";
+import { ArticleProps, PaginationProps } from "../../models/types";
 import { appConstants } from "../../utils/constants";
 import "./Pagination.scss";
 
 const Pagination = ({ articles, onPageChange }: PaginationProps) => {
   const [currentPage, setCurrentPage] = useState(1);
+  const [currentArticles, setCurrentArticles] = useState<ArticleProps[]>([]);
   const articlesPerPage = appConstants.ARTICLES_PER_PAGE; // Number of articles to display per page
+  const totalPages = Math.ceil(articles?.length! / articlesPerPage); // Calculate the total number of pages
+  const pageNumbers: number[] = []; // Array to store page numbers
 
-  // Calculate the total number of pages
-  const totalPages = Math.ceil(articles?.length! / articlesPerPage);
-
-  // Array to store page numbers
-  const pageNumbers: number[] = [];
+  // Push page numbers to the array as per the total number of pages
   for (let i = 1; i <= totalPages; i++) {
     pageNumbers.push(i);
   }
 
   // Calculate indexes of articles to be displayed on the current page
-  const indexOfLastArticle = currentPage * articlesPerPage;
-  const indexOfFirstArticle = indexOfLastArticle - articlesPerPage;
-  const currentArticles = articles?.slice(
-    indexOfFirstArticle,
-    indexOfLastArticle
-  );
+  useEffect(() => {
+    const indexOfLastArticle = currentPage * articlesPerPage;
+    const indexOfFirstArticle = indexOfLastArticle - articlesPerPage;
+    setCurrentArticles(
+      articles?.slice(indexOfFirstArticle, indexOfLastArticle)!
+    );
+  }, [currentPage, articles]);
+
+  // Lift the state of articles to be diaplyed on page change
+  useEffect(() => {
+    onPageChange(currentArticles);
+  }, [currentArticles]);
 
   // Function to handle page change
   const handlePageChange = (e: React.MouseEvent, pageNumber: number) => {
     e.preventDefault();
     setCurrentPage(pageNumber);
-    onPageChange(currentArticles!);
   };
 
   return (
