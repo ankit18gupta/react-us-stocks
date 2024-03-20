@@ -38,8 +38,8 @@ const Pagination = ({ articles, onPageChange }: PaginationProps) => {
   return (
     <>
       {pageNumbers.length > 0 && (
-        <nav className="pagination-wrapper row justify-content-end">
-          <ul className="pagination col-12 justify-content-end">
+        <nav className="pagination-wrapper row">
+          <ul className="pagination col-12">
             <li className={`page-item ${currentPage === 1 ? "disabled" : ""}`}>
               <a
                 className="page-link"
@@ -55,6 +55,7 @@ const Pagination = ({ articles, onPageChange }: PaginationProps) => {
                 className={`page-item ${
                   currentPage === number ? "active" : ""
                 }`}
+                data-testid="page-item"
               >
                 <a
                   className="page-link"

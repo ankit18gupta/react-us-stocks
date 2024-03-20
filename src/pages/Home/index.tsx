@@ -133,7 +133,7 @@ const Home = () => {
     setArticlesToDisplay(currentArticles);
 
   return (
-    <div className="home-page">
+    <div className="home-page" data-testid="home-page">
       <section className="container-fluid home-page-container">
         {loading ? (
           <Loader />

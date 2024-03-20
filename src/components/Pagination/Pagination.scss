@@ -1,5 +1,7 @@
 .pagination-wrapper {
   .pagination {
+    justify-content: right;
+
     .page-item {
       &.active {
         .page-link {

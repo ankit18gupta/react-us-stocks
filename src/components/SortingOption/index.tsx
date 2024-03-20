@@ -7,6 +7,7 @@ const SortingOption = ({ onSortingOptionChange }: SortingOptionProps) => (
       <select
         className="form-select sorting-option-dropdown mt-3"
         onChange={(e) => onSortingOptionChange(e.target.value)}
+        data-testid="sorting-option-dropdown"
       >
         <option value="latestToEarliest" className="sorting-option">
           Date Latest
