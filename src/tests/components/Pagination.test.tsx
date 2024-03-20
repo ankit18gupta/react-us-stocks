@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import Pagination from "../../components/Pagination";
-import articleListData from "../../data/articleListData.json";
+import articleListData from "../../mockData/articleListData.json";
 
 // Mock function for onPageChange
 const onPageChange = jest.fn();

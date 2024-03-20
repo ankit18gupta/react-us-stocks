@@ -1,6 +1,6 @@
 import { render, screen, within } from "@testing-library/react";
 import FilterList from "../../components/FilterList";
-import filterListData from "../../data/filterListData.json";
+import filterListData from "../../mockData/filterListData.json";
 
 // Mock functions for onCategoryFilterChange and onAuthorFilterChange
 const handleCategoryFilterChange = jest.fn();

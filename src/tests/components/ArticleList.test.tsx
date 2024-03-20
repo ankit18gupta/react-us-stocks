@@ -1,6 +1,6 @@
 import { render, screen, within } from "@testing-library/react";
 import ArticleList from "../../components/ArticleList";
-import articleListData from "../../data/articleListData.json";
+import articleListData from "../../mockData/articleListData.json";
 
 describe("Article List component test suite", () => {
   it("renders correct number of articles", () => {

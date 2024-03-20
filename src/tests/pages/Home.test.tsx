@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import axios from "axios";
 import Home from "../../pages/Home";
-import articleListData from "../../data/articleListData.json";
+import articleListData from "../../mockData/articleListData.json";
 
 // Mock the axios module
 jest.mock("axios", () => ({
