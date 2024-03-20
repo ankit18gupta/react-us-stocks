@@ -1,11 +1,20 @@
 # Getting Started with React US Stocks App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 Node JS should be installed on the machine before running any of the below commands.
+
+## Clone or Download the repository code
+
+To clone the repository, you can run:
+
+git clone https://github.com/ankit18gupta/react-us-stocks.git
+
+To download the repository, go to https://github.com/ankit18gupta/react-us-stocks and click on Code button.
+
+Click on Download Zip and extract the folder after downloading.
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory under folder react-us-stocks, you can run:
 
 ### `npm install`
 
