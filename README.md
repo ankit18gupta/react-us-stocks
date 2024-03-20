@@ -1,6 +1,6 @@
 # Getting Started with React US Stocks App
 
-Node JS should be installed on the machine before running any of the below commands.
+Node JS should be installed on the machine before running any of the npm related commands.
 
 ## Clone or Download the repository code
 
@@ -18,7 +18,9 @@ In the project directory under folder react-us-stocks, you can run:
 
 ### `npm install`
 
-Installs the node_modules for the dependencies in package.json file.
+Installs the node_modules for the dependencies present in the package.json file.
+
+If it doesn't work, please delete the package-lock.json file and run the same command again.
 
 ### `npm start`
 
