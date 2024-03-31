@@ -15,7 +15,7 @@ const Article = ({
   const hideArticleClass: string = showArticle ? "" : "hide-article";
 
   return (
-    <div className={`article ${hideArticleClass}`} data-testid="article">
+    <div className={`article ${hideArticleClass}`}>
       <div className="row">
         <div className="col-12 col-md-4 col-xl-2">
           {image && (

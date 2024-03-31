@@ -25,7 +25,7 @@ const App = () => {
     dispatch(fetchArticles(appConstants.FETCH_API_URL));
   }, []);
 
-  // Sort articles by default to date descending and display only current page articles
+  // Sort articles by default to latest date and display only current page articles
   useEffect(() => {
     dispatch(sortArticles(sortingOption));
     dispatch(currentPageArticles(activePageNumber));

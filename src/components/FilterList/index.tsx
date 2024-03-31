@@ -5,32 +5,8 @@ import {
   filterArticlesByCategories,
   sortArticles,
 } from "../../store/slices/articlesSlice";
-import { ListProps } from "../../models/types";
+import List from "./List";
 import "./FilterList.scss";
-
-const List = ({ list, onFilterChange }: ListProps) => (
-  <ul className="filter-list">
-    {list.map((item) => (
-      <li key={item} className="filter-item" data-testid="filter-item">
-        <input
-          type="checkbox"
-          id={item}
-          name={item}
-          value={item}
-          className="form-check-input filter-checkbox"
-          onChange={() => onFilterChange(item)}
-        />
-        <label
-          htmlFor={item}
-          className="filter-label"
-          data-testid="filter-label"
-        >
-          {item}
-        </label>
-      </li>
-    ))}
-  </ul>
-);
 
 const FilterList = () => {
   const dispatch = useAppDispatch();
@@ -61,14 +37,14 @@ const FilterList = () => {
   };
 
   return (
-    <div className="filter-list-wrapper">
-      <div className="filter" data-testid="category-filter">
+    <div className="filter-list-wrapper" data-testid="filter-list-wrapper">
+      <div className="filter">
         <h6 className="filter-heading">Category</h6>
         {categories.length > 0 && (
           <List list={categories} onFilterChange={handleCategoryFilterChange} />
         )}
       </div>
-      <div className="filter" data-testid="author-filter">
+      <div className="filter">
         <h6 className="filter-heading">Author</h6>
         {authors.length > 0 && (
           <List list={authors} onFilterChange={handleAuthorFilterChange} />

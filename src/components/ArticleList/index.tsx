@@ -17,7 +17,7 @@ const ArticleList = () => {
   }));
 
   return (
-    <div className="article-list-wrapper">
+    <div className="article-list-wrapper" data-testid="article-list-wrapper">
       {updatedArticles.length > 0 &&
         updatedArticles.map((article) => (
           <Article {...article} key={article.title} />

@@ -15,7 +15,7 @@ const Pagination = () => {
 
   const articlesPerPage = appConstants.ARTICLES_PER_PAGE; // Number of articles to display per page
   const totalPages = Math.ceil(articles.length / articlesPerPage); // Calculate the total number of pages
-  const pageNumbers = getPageNumbers(totalPages); // Get page numbers to create pagination
+  const pageNumbers = getPageNumbers(totalPages); // Get page numbers to generate pagination
 
   // Event handler for page change
   const handlePageChange = (e: React.MouseEvent, pageNumber: number) => {
@@ -47,7 +47,6 @@ const Pagination = () => {
                 className={`page-item ${
                   activePageNumber === number ? "active" : ""
                 }`}
-                data-testid="page-item"
               >
                 <a
                   className="page-link"
