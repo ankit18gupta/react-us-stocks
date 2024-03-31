@@ -4,36 +4,21 @@ import articleListData from "../../mockData/articleListData.json";
 
 describe("Article List component test suite", () => {
   it("renders correct number of articles", () => {
-    render(
-      <ArticleList
-        articles={articleListData.articles}
-        articlesToDisplay={articleListData.articlesToDisplay}
-      />
-    );
+    render(<ArticleList />);
     const articles = screen.getAllByTestId("article");
     expect(articles[0]).toBeInTheDocument();
     expect(articles).toHaveLength(articleListData.articles.length);
   });
 
   it("hide articles when showArticle is false", () => {
-    render(
-      <ArticleList
-        articles={articleListData.articles}
-        articlesToDisplay={articleListData.articlesToDisplay}
-      />
-    );
+    render(<ArticleList />);
     const articles = screen.getAllByTestId("article");
     const articleClass = articles[0].getAttribute("class");
     expect(articleClass).toContain("hide-article");
   });
 
   it("renders article image src and alt text as string with correct values", () => {
-    render(
-      <ArticleList
-        articles={articleListData.articles}
-        articlesToDisplay={articleListData.articlesToDisplay}
-      />
-    );
+    render(<ArticleList />);
     const articles = screen.getAllByTestId("article");
     const image = within(articles[0]).getByTestId("image");
     const src = image.getAttribute("src");
@@ -46,12 +31,7 @@ describe("Article List component test suite", () => {
   });
 
   it("renders article date as string", () => {
-    render(
-      <ArticleList
-        articles={articleListData.articles}
-        articlesToDisplay={articleListData.articlesToDisplay}
-      />
-    );
+    render(<ArticleList />);
     const articles = screen.getAllByTestId("article");
     const date = within(articles[0]).getByTestId("date");
     expect(date).toBeInTheDocument();
@@ -59,12 +39,7 @@ describe("Article List component test suite", () => {
   });
 
   it("renders article category as string with correct value", () => {
-    render(
-      <ArticleList
-        articles={articleListData.articles}
-        articlesToDisplay={articleListData.articlesToDisplay}
-      />
-    );
+    render(<ArticleList />);
     const articles = screen.getAllByTestId("article");
     const category = within(articles[0]).getByTestId("category");
     expect(category).toBeInTheDocument();
@@ -73,12 +48,7 @@ describe("Article List component test suite", () => {
   });
 
   it("renders article title as string with correct url and value", () => {
-    render(
-      <ArticleList
-        articles={articleListData.articles}
-        articlesToDisplay={articleListData.articlesToDisplay}
-      />
-    );
+    render(<ArticleList />);
     const articles = screen.getAllByTestId("article");
     const titleLink = within(articles[0]).getByTestId("title-link");
     const titleUrl = titleLink.getAttribute("href");
@@ -90,12 +60,7 @@ describe("Article List component test suite", () => {
   });
 
   it("renders article body as string with correct value", () => {
-    render(
-      <ArticleList
-        articles={articleListData.articles}
-        articlesToDisplay={articleListData.articlesToDisplay}
-      />
-    );
+    render(<ArticleList />);
     const articles = screen.getAllByTestId("article");
     const body = within(articles[0]).getByTestId("body");
     expect(body).toBeInTheDocument();
@@ -104,12 +69,7 @@ describe("Article List component test suite", () => {
   });
 
   it("renders article author as string with correct value", () => {
-    render(
-      <ArticleList
-        articles={articleListData.articles}
-        articlesToDisplay={articleListData.articlesToDisplay}
-      />
-    );
+    render(<ArticleList />);
     const articles = screen.getAllByTestId("article");
     const author = within(articles[0]).getByTestId("author");
     expect(author).toBeInTheDocument();

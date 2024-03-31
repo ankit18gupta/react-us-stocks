@@ -2,20 +2,9 @@ import { render, screen, within } from "@testing-library/react";
 import FilterList from "../../components/FilterList";
 import filterListData from "../../mockData/filterListData.json";
 
-// Mock functions for onCategoryFilterChange and onAuthorFilterChange
-const handleCategoryFilterChange = jest.fn();
-const handleAuthorFilterChange = jest.fn();
-
 describe("Filter List component test suite", () => {
   it("renders category filter as string with correct value", () => {
-    render(
-      <FilterList
-        categories={filterListData.categories}
-        authors={filterListData.authors}
-        onCategoryFilterChange={handleCategoryFilterChange}
-        onAuthorFilterChange={handleAuthorFilterChange}
-      />
-    );
+    render(<FilterList />);
     const categoryFilter = screen.getByTestId("category-filter");
     const categoryFilterItems =
       within(categoryFilter).getAllByTestId("filter-item");
@@ -29,14 +18,7 @@ describe("Filter List component test suite", () => {
   });
 
   it("renders author filter as string with correct value", () => {
-    render(
-      <FilterList
-        categories={filterListData.categories}
-        authors={filterListData.authors}
-        onCategoryFilterChange={handleCategoryFilterChange}
-        onAuthorFilterChange={handleAuthorFilterChange}
-      />
-    );
+    render(<FilterList />);
     const authorFilter = screen.getByTestId("author-filter");
     const authorFilterItems =
       within(authorFilter).getAllByTestId("filter-item");
