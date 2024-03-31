@@ -7,7 +7,8 @@
       "date": "2023-12-01",
       "body": "<p>In a significant year for Huawei Technologies Co., the company's revenue soared by 9% in 2023, nearing a $100 billion milestone, following a surprising breakthrough in chip technology that challenged Apple Inc. AAPL and U.S. sanctions.</p>",
       "source": "Benzinga",
-      "author": "Benzinga Neuro"
+      "author": "Benzinga Neuro",
+      "showArticle": true
     },
     {
       "title": "Apple Is &#039;Working Desperately&#039; To Overcome Watch Import Ban With Software Redesign, Aiming For January Launch Amid Patent-Infringement Case: Report - Masimo  ( NASDAQ:MASI )",
@@ -16,7 +17,8 @@
       "date": "2023-12-18",
       "body": "<p>Apple Inc. AAPL is strategically seeking to circumvent a ban on its popular watch models while appealing the patent-infringement ruling that led to the prohibition.</p>",
       "source": "Benzinga",
-      "author": "Benzinga Neuro"
+      "author": "Benzinga Neuro",
+      "showArticle": true
     },
     {
       "title": "No Threat From Traditional Autos, But Tesla Should Be Concerned About Chinese Rivals And This FAANG Giant: Munster - Apple  ( NASDAQ:AAPL ) , BYD  ( OTC:BYDDF )",
@@ -25,7 +27,8 @@
       "date": "2023-12-29",
       "body": "<p>With Chinese smartphone giant Xiaomi Corporation's XIACY entry into the electric vehicle arena, Gene Munster of Deepwater Asset Management issued a cautious note for EV frontrunner Tesla, Inc. TSLA.</p>",
       "source": "Delta",
-      "author": "Werder Helmner"
+      "author": "Werder Helmner",
+      "showArticle": true
     },
     {
       "title": "&#039;Xiaomi Announces The Porsche Taycan&#039;: Mark Gurman Reacts To Chinese EV Maker&#039;s New SU7 EV - Xiaomi  ( OTC:XIACF )",
@@ -34,7 +37,8 @@
       "date": "2023-12-29",
       "body": "<p>Chinese smartphone maker Xiaomi Corp XIACF revealed its first electric vehicle called the SU7 on Thursday and Bloomberg tech correspondent Mark Gurman couldn't help but note the similarities between the vehicle and German automaker Porsche's models.</p>",
       "source": "Benzinga",
-      "author": "Benzinga Neuro"
+      "author": "Benzinga Neuro",
+      "showArticle": true
     },
     {
       "title": "Bitcoin Miner Stocks Beat Blue-Chips In Trading Volumes, Analyst Says Miners To Peak As BTC Rallies",
@@ -43,7 +47,8 @@
       "date": "2023-12-29",
       "body": "<p>Bitcoin miner stocks have witnessed a significant rally in trading volumes compared to blue-chip stocks on the exchange amidst the rise in traders' interest in Bitcoin.</p>",
       "source": "Benzinga",
-      "author": "Benzinga Neuro"
+      "author": "Benzinga Neuro",
+      "showArticle": true
     },
     {
       "title": "Joe Biden Vs. Apple Watch: White House Upholds Ban, Masimo CEO One Of President&#039;s &#039;Closest Friends&#039; - Apple  ( NASDAQ:AAPL ) , Masimo  ( NASDAQ:MASI )",
@@ -52,7 +57,8 @@
       "date": "2023-12-29",
       "body": "<p>One of the biggest stories in the technology sector over the last week was a ban to certain models of the Apple Watch, a key product from Apple Inc AAPL. The ban comes with a patent battle, a court appeal and more decisions to come.</p>",
       "source": "Benzinga",
-      "author": "Benzinga Neuro"
+      "author": "Benzinga Neuro",
+      "showArticle": true
     },
     {
       "title": "S&amp;P 500 Near Record High As These 3 Dow Stocks Test Buy Points",
@@ -61,7 +67,8 @@
       "date": "2023-12-29",
       "body": "<p>The S&amp;P 500 climbed within inches of a record high Thursday afternoon, as the stock market rose moderately but small caps broke a trend of outperformance. The S&amp;P 500 climbed 0.2% to 4,791, leaving the index within 27 points of its prior record high 4,818, reached nearly two years ago.</p>",
       "source": "Gamma",
-      "author": "Patrick Wilson"
+      "author": "Patrick Wilson",
+      "showArticle": true
     },
     {
       "title": "Apple  ( AAPL )  Halts Smartwatch Sales Ban Amid Patent Dispute",
@@ -70,10 +77,11 @@
       "date": "2023-12-29",
       "body": "<p>Apple (AAPL) wins a temporary reprieve in the patent battle over its smartwatches, pausing an import ban amid a legal clash with Masimo over medical tech.</p>",
       "source": "Benzinga",
-      "author": "Benzinga Neuro"
+      "author": "Benzinga Neuro",
+      "showArticle": true
     }
   ],
-  "articlesToDisplay": [
+  "activePageArticles": [
     {
       "title": "Huawei Chips Away At Apple, Nvidia: Revenue Nears $100B As China Flexes Tech Muscle Despite US Sanctions - NVIDIA  ( NASDAQ:NVDA )",
       "url": "https://www.benzinga.com/news/23/12/36421258/huawei-chips-away-at-apple-nvidia-revenue-nears-100b-as-china-flexes-tech-muscle-despite-us-sanction",
@@ -81,7 +89,8 @@
       "date": "2023-12-01",
       "body": "<p>In a significant year for Huawei Technologies Co., the company's revenue soared by 9% in 2023, nearing a $100 billion milestone, following a surprising breakthrough in chip technology that challenged Apple Inc. AAPL and U.S. sanctions.</p>",
       "source": "Benzinga",
-      "author": "Benzinga Neuro"
+      "author": "Benzinga Neuro",
+      "showArticle": true
     },
     {
       "title": "Apple Is &#039;Working Desperately&#039; To Overcome Watch Import Ban With Software Redesign, Aiming For January Launch Amid Patent-Infringement Case: Report - Masimo  ( NASDAQ:MASI )",
@@ -90,7 +99,8 @@
       "date": "2023-12-18",
       "body": "<p>Apple Inc. AAPL is strategically seeking to circumvent a ban on its popular watch models while appealing the patent-infringement ruling that led to the prohibition.</p>",
       "source": "Benzinga",
-      "author": "Benzinga Neuro"
+      "author": "Benzinga Neuro",
+      "showArticle": true
     },
     {
       "title": "No Threat From Traditional Autos, But Tesla Should Be Concerned About Chinese Rivals And This FAANG Giant: Munster - Apple  ( NASDAQ:AAPL ) , BYD  ( OTC:BYDDF )",
@@ -99,7 +109,8 @@
       "date": "2023-12-29",
       "body": "<p>With Chinese smartphone giant Xiaomi Corporation's XIACY entry into the electric vehicle arena, Gene Munster of Deepwater Asset Management issued a cautious note for EV frontrunner Tesla, Inc. TSLA.</p>",
       "source": "Delta",
-      "author": "Werder Helmner"
+      "author": "Werder Helmner",
+      "showArticle": true
     }
   ]
 }

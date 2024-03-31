@@ -1,14 +1,6 @@
 import { ArticleProps } from "../../models/types";
 import { appConstants } from "../../utils/constants";
-
-// Format date string to display in UI
-const formatDate = (dateString: string) => {
-  const dateObject = new Date(dateString);
-  const month = dateObject.toLocaleString("en-US", { month: "long" });
-  const year = dateObject.getFullYear();
-  const formattedDate = `${month} ${dateObject.getDate()}, ${year}`;
-  return formattedDate;
-};
+import getFormattedDate from "../../utils/getFormattedDate";
 
 const Article = ({
   image,
@@ -23,7 +15,7 @@ const Article = ({
   const hideArticleClass: string = showArticle ? "" : "hide-article";
 
   return (
-    <div className={`article ${hideArticleClass}`} data-testid="article">
+    <div className={`article ${hideArticleClass}`}>
       <div className="row">
         <div className="col-12 col-md-4 col-xl-2">
           {image && (
@@ -40,7 +32,7 @@ const Article = ({
             <div className="col-7">
               {date && (
                 <p className="article-date" data-testid="date">
-                  {formatDate(date)}
+                  {getFormattedDate(date)}
                 </p>
               )}
             </div>

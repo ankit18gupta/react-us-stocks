@@ -1,38 +1,26 @@
-import { useEffect, useState } from "react";
-import { ArticleProps, PaginationProps } from "../../models/types";
+import { useAppDispatch, useAppSelector } from "../../hooks";
+import { currentPageArticles } from "../../store/slices/articlesSlice";
 import { appConstants } from "../../utils/constants";
+import getPageNumbers from "../../utils/getPageNumbers";
 import "./Pagination.scss";
 
-const Pagination = ({ articles, onPageChange }: PaginationProps) => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [currentArticles, setCurrentArticles] = useState<ArticleProps[]>([]);
+const Pagination = () => {
+  const dispatch = useAppDispatch();
+  const articles = useAppSelector(
+    (state) => state.articlesSlice.filteredArticles
+  );
+  const activePageNumber = useAppSelector(
+    (state) => state.articlesSlice.activePageNumber
+  );
+
   const articlesPerPage = appConstants.ARTICLES_PER_PAGE; // Number of articles to display per page
-  const totalPages = Math.ceil(articles?.length! / articlesPerPage); // Calculate the total number of pages
-  const pageNumbers: number[] = []; // Array to store page numbers
-
-  // Push page numbers to the array as per the total number of pages
-  for (let i = 1; i <= totalPages; i++) {
-    pageNumbers.push(i);
-  }
-
-  // Calculate indexes of articles to be displayed on the current page
-  useEffect(() => {
-    const indexOfLastArticle = currentPage * articlesPerPage;
-    const indexOfFirstArticle = indexOfLastArticle - articlesPerPage;
-    setCurrentArticles(
-      articles?.slice(indexOfFirstArticle, indexOfLastArticle)!
-    );
-  }, [currentPage, articles]);
-
-  // Lift up the state of articles to be displayed on page change
-  useEffect(() => {
-    onPageChange(currentArticles);
-  }, [currentArticles]);
+  const totalPages = Math.ceil(articles.length / articlesPerPage); // Calculate the total number of pages
+  const pageNumbers = getPageNumbers(totalPages); // Get page numbers to generate pagination
 
   // Event handler for page change
   const handlePageChange = (e: React.MouseEvent, pageNumber: number) => {
     e.preventDefault();
-    setCurrentPage(pageNumber);
+    dispatch(currentPageArticles(pageNumber));
   };
 
   return (
@@ -40,11 +28,15 @@ const Pagination = ({ articles, onPageChange }: PaginationProps) => {
       {pageNumbers.length > 0 && (
         <nav className="pagination-wrapper row">
           <ul className="pagination col-12">
-            <li className={`page-item ${currentPage === 1 ? "disabled" : ""}`}>
+            <li
+              className={`page-item ${
+                activePageNumber === 1 ? "disabled" : ""
+              }`}
+            >
               <a
                 className="page-link"
                 href="#"
-                onClick={(e) => handlePageChange(e, currentPage - 1)}
+                onClick={(e) => handlePageChange(e, activePageNumber - 1)}
               >
                 <span>&lt;</span>
               </a>
@@ -53,9 +45,8 @@ const Pagination = ({ articles, onPageChange }: PaginationProps) => {
               <li
                 key={number}
                 className={`page-item ${
-                  currentPage === number ? "active" : ""
+                  activePageNumber === number ? "active" : ""
                 }`}
-                data-testid="page-item"
               >
                 <a
                   className="page-link"
@@ -68,13 +59,13 @@ const Pagination = ({ articles, onPageChange }: PaginationProps) => {
             ))}
             <li
               className={`page-item ${
-                currentPage === totalPages ? "disabled" : ""
+                activePageNumber === totalPages ? "disabled" : ""
               }`}
             >
               <a
                 className="page-link"
                 href="#"
-                onClick={(e) => handlePageChange(e, currentPage + 1)}
+                onClick={(e) => handlePageChange(e, activePageNumber + 1)}
               >
                 <span>&gt;</span>
               </a>

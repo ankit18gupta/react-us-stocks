@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
-import axios from "axios";
+import { Provider } from "react-redux";
+import store from "../../store";
 import Home from "../../pages/Home";
-import articleListData from "../../mockData/articleListData.json";
 
 // Mock the axios module
 jest.mock("axios", () => ({
@@ -12,15 +12,12 @@ jest.mock("axios", () => ({
 }));
 
 describe("Home Page component test suite", () => {
-  beforeEach(() => {
-    // Mock axios.get() implementation
-    jest
-      .spyOn(axios, "get")
-      .mockResolvedValue({ data: articleListData.articles });
-  });
-
   it("renders home page correctly", () => {
-    render(<Home />);
+    render(
+      <Provider store={store}>
+        <Home />
+      </Provider>
+    );
     const homePage = screen.getByTestId("home-page");
     expect(homePage).toBeInTheDocument();
   });

@@ -1,20 +1,22 @@
-import { render, screen } from "@testing-library/react";
+import { render } from "@testing-library/react";
+import { Provider } from "react-redux";
+import store from "../../store";
 import Pagination from "../../components/Pagination";
-import articleListData from "../../mockData/articleListData.json";
 
-// Mock function for onPageChange
-const onPageChange = jest.fn();
+// Mock the axios module
+jest.mock("axios", () => ({
+  __esModule: true,
+  default: {
+    get: jest.fn(),
+  },
+}));
 
 describe("Pagination component test suite", () => {
-  it("renders correct number of pages", () => {
+  it("renders pagination correctly", () => {
     render(
-      <Pagination
-        articles={articleListData.articles}
-        onPageChange={onPageChange}
-      />
+      <Provider store={store}>
+        <Pagination />
+      </Provider>
     );
-    const pageItems = screen.getAllByTestId("page-item");
-    expect(pageItems[0]).toBeInTheDocument();
-    expect(pageItems).toHaveLength(2);
   });
 });

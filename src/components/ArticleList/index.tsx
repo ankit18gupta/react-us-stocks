@@ -1,19 +1,25 @@
-import { ArticleListProps, ArticleProps } from "../../models/types";
+import { useAppSelector } from "../../hooks";
 import Article from "./Article";
 import "./ArticleList.scss";
 
-const ArticleList = ({ articles, articlesToDisplay }: ArticleListProps) => {
-  const updatedArticles: ArticleProps[] | undefined = articles?.map(
-    (article) => ({
-      ...article,
-      showArticle: articlesToDisplay?.includes(article),
-    })
+const ArticleList = () => {
+  const articles = useAppSelector(
+    (state) => state.articlesSlice.filteredArticles
+  );
+  const activePageArticles = useAppSelector(
+    (state) => state.articlesSlice.activePageArticles
   );
 
+  // Updated articles to show on current page
+  const updatedArticles = articles.map((article) => ({
+    ...article,
+    showArticle: activePageArticles.includes(article),
+  }));
+
   return (
-    <div className="article-list-wrapper">
-      {updatedArticles?.length! > 0 &&
-        updatedArticles?.map((article) => (
+    <div className="article-list-wrapper" data-testid="article-list-wrapper">
+      {updatedArticles.length > 0 &&
+        updatedArticles.map((article) => (
           <Article {...article} key={article.title} />
         ))}
     </div>
