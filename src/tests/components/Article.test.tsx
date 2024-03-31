@@ -4,7 +4,7 @@ import articleListData from "../../mockData/articleListData.json";
 
 describe("Article component test suite", () => {
   beforeEach(() => {
-    render(<Article {...articleListData.articles[0]} showArticle={true} />);
+    render(<Article {...articleListData.articles[0]} />);
   });
 
   it("renders article image src and alt text as string with correct values", () => {
